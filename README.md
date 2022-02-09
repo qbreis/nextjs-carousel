@@ -35,11 +35,12 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## Personal Notes
 
+```bash
 node -v
-- 6.13.6
+6.13.6
 
 npm -v
-- v13.7.0
+v13.7.0
 
 npx create-next-app nextjs-carousel
 [...]
@@ -47,6 +48,8 @@ npx create-next-app nextjs-carousel
 cd nextjs-carousel
 
 git config --local user.name "qbreis"
+
 git config --local user.email "qbreis@gmail.com"
 
 ssh-keygen -t ed25519 -C "qbreis@gmail.com"
+```
