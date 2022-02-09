@@ -54,4 +54,6 @@ git config --local user.name "qbreis"
 git config --local user.email "qbreis@gmail.com"
 
 ssh-keygen -t ed25519 -C "qbreis@gmail.com"
+
+npm install @glidejs/glide
 ```
