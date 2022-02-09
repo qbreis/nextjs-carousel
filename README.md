@@ -32,3 +32,21 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Personal Notes
+
+node -v
+6.13.6
+
+npm -v
+v13.7.0
+
+npx create-next-app nextjs-carousel
+[...]
+
+cd nextjs-carousel
+
+git config --local user.name "qbreis"
+git config --local user.email "qbreis@gmail.com"
+
+ssh-keygen -t ed25519 -C "qbreis@gmail.com"
