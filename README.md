@@ -1,5 +1,13 @@
 Integración de un *Carousel* o *Pase de diapositivas* en [Next.js](https://nextjs.org/) para poder integrar posteriormente al proyecto [Anonymath](https://github.com/isfegu/anonymath).
 
+En este caso se propone la librería [Glide](https://glidejs.com/).
+
+```bash
+npm install @glidejs/glide
+```
+
+Para este ejercicio me he ayudado de la [discusión en Github](https://github.com/glidejs/glide/issues/366), concretamente la respuesta / solución que da [jedrzejchalubek](https://github.com/jedrzejchalubek).
+
 ## Getting Started
 
 First, run the development server:
