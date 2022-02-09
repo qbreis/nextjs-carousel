@@ -14,3 +14,36 @@ a {
 * {
   box-sizing: border-box;
 }
+
+/** Carousel - glide **/
+
+.glide { 
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 1rem;
+  overflow: hidden;
+}
+
+.glide ul { 
+  background-color: #464646;
+  color: #ffffff;
+  height: 300px; 
+}
+
+.glide ul li {
+  display: flex;
+  align-items: center;
+	justify-content: center;
+}
+
+.glide__arrow {
+  position: absolute;
+  top: 50%;
+}
+.glide__arrow--prev {
+  left: 0;
+}
+.glide__arrow--next {
+  right: 0;
+}
