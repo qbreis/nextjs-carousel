@@ -36,10 +36,10 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 ## Personal Notes
 
 node -v
-6.13.6
+- 6.13.6
 
 npm -v
-v13.7.0
+- v13.7.0
 
 npx create-next-app nextjs-carousel
 [...]
