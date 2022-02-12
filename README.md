@@ -57,11 +57,11 @@ npx create-next-app nextjs-carousel
 
 cd nextjs-carousel
 
-git config --local user.name "qbreis"
+git config --local user.name "username"
 
-git config --local user.email "qbreis@gmail.com"
+git config --local user.email "username@gmail.com"
 
-ssh-keygen -t ed25519 -C "qbreis@gmail.com"
+ssh-keygen -t ed25519 -C "username@gmail.com"
 
 npm install @glidejs/glide
 ```
