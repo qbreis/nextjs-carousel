@@ -71,6 +71,11 @@ npm install @glidejs/glide
 pages\index.js:
 
 ```bash
+
+import Image from 'next/image' // En pages/index.js ya no se usa el componente Image!
+import styles from '../styles/Home.module.css'
+import {Carousel, Slide } from "../components/carousel";
+
         <Carousel options={{ 
             type: 'carousel',
             animationDuration: 500,
@@ -153,4 +158,113 @@ pages\index.js:
         </Carousel>
 ```
 
-xxx
+components\carousel.js:
+
+```bash
+import Glide from "@glidejs/glide";
+import { useImperativeHandle, useEffect, useRef, forwardRef } from "react";
+import Image from 'next/image'
+import "@glidejs/glide/dist/css/glide.core.css";
+
+export const Carousel = forwardRef(({ options, children }, ref) => {
+  const sliderRef = useRef();
+  useImperativeHandle(ref, () => sliderRef.current);
+  useEffect(() => {
+    const slider = new Glide(sliderRef.current, options);
+    slider.mount();
+    return () => slider.destroy();
+  }, [options]);
+
+  return (
+    <div className="glide" ref={sliderRef}>
+        <div className="glide__track" data-glide-el="track">
+            <ul className="glide__slides">{children}</ul>
+        </div>
+        <div className="glide__arrows" data-glide-el="controls">
+            <button className="glide__arrow glide__arrow--prev" data-glide-dir="<">prev</button>
+            <button className="glide__arrow glide__arrow--next" data-glide-dir=">">next</button> 
+        </div>
+    </div>
+  );
+});
+
+export const Slide = forwardRef(({ options }, ref) => {
+    if (options.src){
+        const captionDescription = options.captionDescription.map(value => <p>{value}</p>);
+        return (
+            <li className="glide__slide" ref={ref}>
+                <figure>
+                    <Image
+                        alt=''
+                        src={options.src}
+                        width={options.width}
+                        height={options.height}
+                        layout='fill'
+                        objectFit='cover'
+                        priority
+                    />
+                    <figcaption>
+                        <h3>{options.captionTitle}</h3>
+                        <p>{captionDescription}</p>
+                    </figcaption>
+                </figure>
+            </li>
+        );
+    }else{
+        return <></>
+    }
+});
+```
+
+styles\globals.css:
+
+```bash
+/** Carousel - glide **/
+
+.glide { 
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 1rem;
+  overflow: hidden;
+}
+
+.glide figcaption {
+  background-color: rgba(0,0,0,.2);
+  padding: .5rem 1rem;
+  bottom: 0;
+  width: 100%;
+  position: absolute;
+  left: 0;
+}
+.glide figcaption h3,
+.glide figcaption p { margin: .5rem 0; }
+/*
+.glide .glide__slide span { width: 100% !important;height: 100% !important; }
+.glide .glide__slide img { object-fit: cover; }
+*/
+
+.glide ul { 
+  background-color: #464646;
+  color: #ffffff;
+  height: 300px; 
+}
+
+.glide ul li {
+  display: flex;
+  align-items: center;
+	justify-content: center;
+  position: relative;
+}
+
+.glide__arrow {
+  position: absolute;
+  top: 50%;
+}
+.glide__arrow--prev {
+  left: 0;
+}
+.glide__arrow--next {
+  right: 0;
+}
+```
