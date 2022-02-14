@@ -151,4 +151,6 @@ pages\index.js:
           }} />
             
         </Carousel>
-```bash
+```
+
+xxx
