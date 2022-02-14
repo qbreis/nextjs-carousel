@@ -65,3 +65,90 @@ ssh-keygen -t ed25519 -C "username@gmail.com"
 
 npm install @glidejs/glide
 ```
+
+## Para importar el componente Image de NextJs
+
+pages\index.js:
+
+```bash
+        <Carousel options={{ 
+            type: 'carousel',
+            animationDuration: 500,
+            //autoplay: 4500,
+            focusAt: '1',
+            startAt: 1,
+            perView: 1,
+        }}>
+          <Slide options={{ 
+            captionTitle: 'Primer paso',
+            captionDescription: ['Coloca la hoja sobre una superficie plana con la parte impresa hacia abajo. De esta forma tu manuscrito quedaría a la vista.'],
+            src: slide_1.src, 
+            width: '500', 
+            height: '375' 
+          }} />
+          <Slide options={{ 
+            captionTitle: 'Segundo paso',
+            captionDescription: ['Haz el primer pliegue a lo largo de la línea punteada que hay en el dorso.'],
+            src: slide_2.src, 
+            width: '500', 
+            height: '375' 
+          }} />
+          <Slide options={{ 
+            captionTitle: 'Tercer paso',
+            captionDescription: ['Te quedará a la vista el aviso de "no tirar a la basura".'],
+            src: slide_3.src, 
+            width: '500', 
+            height: '375' 
+          }} />
+          <Slide options={{ 
+            captionTitle: 'Cuarto paso',
+            captionDescription: ['Pliega ahora el otro lado de la hoja, también por la línea punteada.'],
+            src: slide_4.src, 
+            width: '500', 
+            height: '375' 
+          }} />
+          <Slide options={{ 
+            captionTitle: 'Quinto paso',
+            captionDescription: ['Este pliego tapará en anterior.'],
+            src: slide_5.src, 
+            width: '500', 
+            height: '375' 
+          }} />
+          <Slide options={{ 
+            captionTitle: 'Sexto paso',
+            captionDescription: ['Ahora quedará a la vista sólo la URL de ANONYMATH.'],
+            src: slide_6.src, 
+            width: '500', 
+            height: '375' 
+          }} />
+          <Slide options={{ 
+            captionTitle: 'Séptimo paso',
+            captionDescription: ['Este es el último plegado. No tiene líneas punteadas. Se trata de introducir un extremo del papel doblado dentro del otro. El de la derecha hace de sobre y el de la izquierda es el que se introduce dentro del otro.'],
+            src: slide_7.src, 
+            width: '500', 
+            height: '375' 
+          }} />
+          <Slide options={{ 
+            captionTitle: 'Octavo paso',
+            captionDescription: ['Se debe introducir hasta la línea de puntos.'],
+            src: slide_8.src, 
+            width: '500', 
+            height: '375' 
+          }} />
+          <Slide options={{ 
+            captionTitle: 'Noveno paso',
+            captionDescription: ['Aplástalo contra la superficie plana para acabar el plegado, de manera que la línea de puntos quede más o menos centrada.'],
+            src: slide_9.src, 
+            width: '500', 
+            height: '375' 
+          }} />
+          <Slide options={{ 
+            captionTitle: 'Décimo paso',
+            captionDescription: ['El plagado ya está hecho y por este lado la superficie es blanca. Al darle la vuelta sólo se ve el logo de ANONYMATH.', 'Ya puedes dejar tu mensaje matemático en donde quieras.'],
+            src: slide_10.src, 
+            width: '500', 
+            height: '375' 
+          }} />
+            
+        </Carousel>
+```bash
