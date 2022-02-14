@@ -205,7 +205,7 @@ export const Slide = forwardRef(({ options }, ref) => {
                     />
                     <figcaption>
                         <h3>{options.captionTitle}</h3>
-                        <p>{captionDescription}</p>
+                        {captionDescription}
                     </figcaption>
                 </figure>
             </li>
